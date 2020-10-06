@@ -26,18 +26,4 @@ public class VehicleShould {
         assertThat(vehicle.engineIsStarted())
                 .isFalse();
     }
-
-    public class TestableVehicle extends Vehicle {
-
-        @Override
-        public void fillUpWithFuel() {
-
-        }
-
-        @Override
-        public void chargeBattery() {
-
-        }
-    }
-
 }
