@@ -1,16 +1,25 @@
 package com.codurance.dip;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Random;
 
+@Service
 public class RandomQuoteService {
 
-    private final FileQuoteList quote = new FileQuoteList();
+    private final IQuoteList quoteList;
+
+    @Autowired
+    public RandomQuoteService(IQuoteList quoteList) {
+        this.quoteList = quoteList;
+    }
 
     public String getRandomQuote() {
-        List<String> quoteList = quote.getQuoteList();
+        List<String> quotes = quoteList.getQuoteList();
         Random random = new Random();
-        int index = random.nextInt(quoteList.size());
-        return quoteList.get(index);
+        int index = random.nextInt(quotes.size());
+        return quotes.get(index);
     }
 }

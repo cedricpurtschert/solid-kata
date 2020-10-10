@@ -1,5 +1,7 @@
 package com.codurance.dip;
 
+import org.springframework.stereotype.Component;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -9,7 +11,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FileQuoteList {
+@Component
+public class FileQuoteList implements IQuoteList {
 
     final String fileName = "/files/quote.txt";
     final File file = getFileFromResource(fileName);

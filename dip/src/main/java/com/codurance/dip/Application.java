@@ -1,9 +1,11 @@
 package com.codurance.dip;
 
-public class Application {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
+public class Application {
     public static void main(String[] args) {
-        RandomQuoteService randQ = new RandomQuoteService();
-        System.out.println(randQ.getRandomQuote());
+        SpringApplication.run(Application.class, args);
     }
 }
