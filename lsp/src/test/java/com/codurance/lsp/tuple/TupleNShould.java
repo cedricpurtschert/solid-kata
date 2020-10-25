@@ -8,7 +8,7 @@ public class TupleNShould {
 
     @Test
     public void test_add_all_tuples() {
-        Tuple tuple = new Tuple0();
+        Tuple<String> tuple = new Tuple0<>();
         tuple = tuple.add("Hello");
         tuple = tuple.add("World");
         tuple = tuple.add("!");
